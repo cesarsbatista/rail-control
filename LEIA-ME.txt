@@ -1,3 +1,4 @@
-RAIL CONTROL V2 — SIMULAÇÃO
-
-Substitua index.html, manifest.webmanifest e sw.js na raiz do repositório GitHub Pages. Confirme o commit e aguarde a publicação. Reabra o app no iPhone; se ainda mostrar a versão antiga, abra o endereço no Safari e atualize a página. O app NÃO controla locomotivas reais. Garagem expansível, dois controladores simultâneos, visual translúcido inspirado no iOS, dados salvos no navegador.
+RAIL CONTROL V3
+Atualize os arquivos na raiz do repositório GitHub Pages e aguarde a publicação.
+Novidades: tema escuro/claro/automático, indicação de movimento nos cartões, toque longo de mais de 1 segundo para renomear, velocidade em incrementos de 10% com botões +/- e slider.
+A V3 importa os cadastros locais da V2 quando possível. O app permanece em modo de simulação, sem controle real de trilhos.
