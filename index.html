@@ -1,84 +1,36 @@
-<!doctype html>
-<html lang="pt-BR">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#101419"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<title>Rail Control — Frateschi</title>
-<link rel="manifest" href="manifest.webmanifest">
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#e9eef5"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><link rel="manifest" href="manifest.webmanifest"><title>Rail Control</title>
 <style>
-:root{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#eef2f5;background:#101419}
-*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 80% 0%,#20303a 0%,#101419 55%);padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom)}
-main{max-width:650px;margin:auto;padding:24px 19px 35px}
-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px}
-.brand{font-size:15px;font-weight:750;letter-spacing:.16em}.sub{color:#9aa6ae;font-size:11px;margin-top:5px;letter-spacing:.12em}
-.pill{border:1px solid #40515b;color:#b8c7d0;border-radius:99px;padding:8px 11px;font-size:11px}
-h1{font-size:30px;letter-spacing:-.06em;margin:0 0 8px}p{color:#a8b3bb;font-size:14px;line-height:1.5;margin:0 0 23px}
-.tabs{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:17px}
-.tab{background:#1a232a;border:1px solid #2c3941;border-radius:15px;color:#aebbc4;text-align:left;padding:14px 15px;cursor:pointer}
-.tab.active{border-color:#6de1c2;background:#1b302e;color:#fff}
-.tab small{display:block;margin-top:5px;font-size:11px;color:#a3b0b9}
-.card{border:1px solid #2c3941;border-radius:23px;padding:24px;background:#192127;box-shadow:0 20px 60px #0002}
-.row{display:flex;justify-content:space-between;align-items:center;gap:10px}
-.label{font-size:12px;color:#9facb6;text-transform:uppercase;letter-spacing:.12em}
-h2{margin:6px 0 0;font-size:22px;letter-spacing:-.04em}
-.dot{display:inline-block;background:#65e0bc;width:8px;height:8px;border-radius:50%;margin-right:7px}
-.readout{text-align:center;padding:35px 0 26px}
-.number{font-size:86px;font-weight:650;line-height:1;letter-spacing:-.09em;font-variant-numeric:tabular-nums}
-.unit{font-size:12px;color:#a7b4bc;letter-spacing:.15em;margin-top:10px}
-input[type=range]{width:100%;accent-color:#70e4c5;cursor:pointer;height:35px}
-.rangeends{display:flex;justify-content:space-between;color:#82929c;font-size:11px}
-.section{margin-top:24px}.sectitle{color:#a5b2bc;font-size:12px;margin-bottom:11px}
-.buttons{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-button{font:inherit;touch-action:manipulation}
-.btn{border-radius:13px;border:1px solid #3c4a53;background:#222d34;color:#c4d0d7;padding:15px;cursor:pointer;font-weight:600}
-.btn.selected{border-color:#70e4c5;background:#244039;color:#a8f5de}
-.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
-.stop{background:#513036;border-color:#8b4a55;color:#ffd6dc}
-.info{font-size:12px;color:#94a4ad;margin-top:18px;line-height:1.55}
-.footer{margin-top:17px;color:#7e909b;text-align:center;font-size:11px}
-#status{font-size:12px;color:#a3b2ba;margin-top:18px}
-@media(min-width:700px){main{padding-top:42px}}
-</style>
-</head>
-<body><main>
-<header><div><div class="brand">RAIL / CONTROL</div><div class="sub">FRATESCHI · HO</div></div><div class="pill">● MODO SIMULAÇÃO</div></header>
-<h1>Suas locomotivas.</h1><p>Controle simples e independente. Nesta versão, os comandos são simulados e não enviam energia aos trilhos.</p>
-<div class="tabs"><button class="tab active" data-id="3008">3008<small>Locomotiva 01</small></button><button class="tab" data-id="3042">3042<small>Locomotiva 02</small></button></div>
-<section class="card">
-<div class="row"><div><div class="label">Locomotiva selecionada</div><h2 id="name">Frateschi 3008</h2></div><div class="label"><span class="dot"></span>PRONTA</div></div>
-<div class="readout"><div class="number" id="speed">0</div><div class="unit">POTÊNCIA · %</div></div>
-<label class="label" for="throttle">Acelerador</label>
-<input id="throttle" aria-label="Potência da locomotiva" type="range" min="0" max="100" step="1" value="0">
-<div class="rangeends"><span>0 · PARADO</span><span>100 · MÁXIMO</span></div>
-<div class="section"><div class="sectitle">Sentido de marcha</div><div class="buttons"><button id="forward" class="btn selected">↑ Frente</button><button id="reverse" class="btn">↓ Ré</button></div></div>
-<div class="section"><div class="sectitle">Iluminação</div><div class="buttons"><button id="light" class="btn">◌ Faróis desligados</button><button id="zero" class="btn">Zerar velocidade</button></div></div>
-<div class="actions"><button id="stop" class="btn stop">■ Parar esta</button><button id="allstop" class="btn stop">■ Parar todas</button></div>
-<div id="status" role="status" aria-live="polite">Aguardando comandos.</div>
-<div class="info">Segurança: a troca de direção exige potência zero. A parada de emergência física e a proteção contra curto-circuito serão implementadas na futura central DCC.</div>
-</section><div class="footer">PROTÓTIPO 01 · CONTROLE LOCAL SIMULADO</div>
-</main>
+:root{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif;color:#152339;background:#e9eef5}*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 5% 5%,#cbdcf9,transparent 55%),radial-gradient(ellipse at 95% 70%,#c8e8e8,transparent 55%),#e9eef5}button,input{font:inherit}button{cursor:pointer;touch-action:manipulation}main{max-width:720px;margin:auto;padding:env(safe-area-inset-top) 18px calc(110px + env(safe-area-inset-bottom))}.top{display:flex;justify-content:space-between;align-items:center;padding-top:27px}.eyebrow{font-size:11px;letter-spacing:.16em;color:#5d738e;font-weight:750}.title{font-size:35px;font-weight:750;letter-spacing:-.065em;margin:5px 0 0}.sim{font-size:11px;background:#ffffffa8;border:1px solid #ffffffc9;border-radius:99px;padding:9px 12px;color:#49617a;white-space:nowrap}.intro{color:#5f7289;font-size:14px;line-height:1.5;margin:12px 0 25px}.glass{background:#ffffffa8;border:1px solid #fff;box-shadow:0 12px 40px #54728a18,inset 0 1px #fff;border-radius:24px;backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px)}.sectionhead{display:flex;align-items:center;justify-content:space-between;margin:23px 2px 12px}.sectionhead h2{font-size:18px;margin:0;letter-spacing:-.035em}.muted{color:#708198;font-size:12px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.loco{padding:18px;text-align:left;color:inherit;min-height:140px}.loco .num{font-size:28px;font-weight:760;letter-spacing:-.05em}.loco .model{font-size:12px;color:#687d93;margin-top:5px}.loco .bottom{display:flex;justify-content:space-between;align-items:center;margin-top:23px;font-size:12px;color:#526b82}.indicator{width:8px;height:8px;border-radius:50%;display:inline-block;background:#9aa9b6;margin-right:5px}.indicator.on{background:#22a889}.add{border:1px dashed #9eafc2;background:#ffffff55;display:grid;place-items:center;color:#4d6680;font-size:15px}.panel{padding:19px;margin-top:12px}.paneltop{display:flex;justify-content:space-between;align-items:center;gap:8px}.panelname{font-size:18px;font-weight:730;letter-spacing:-.035em}.badge{font-size:11px;color:#60758a;background:#e8eff5;border-radius:30px;padding:7px 9px}.speedrow{display:flex;align-items:baseline;gap:8px;margin:15px 0 8px}.speed{font-size:50px;line-height:1;font-weight:750;letter-spacing:-.07em;font-variant-numeric:tabular-nums}.unit{font-size:12px;color:#6a7f93}input[type=range]{width:100%;accent-color:#1478f0;height:33px}.ends{display:flex;justify-content:space-between;color:#8392a5;font-size:11px}.controls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:13px}.control{background:#eef3f9;border:1px solid #e2eaf2;border-radius:13px;padding:12px 4px;color:#4c6178;font-weight:650;font-size:12px}.control.active{background:#d9eaff;color:#0867d0;border-color:#a9d0ff}.control.danger{background:#ffedf0;color:#b92e48;border-color:#ffd6df}.emergency{width:100%;margin:17px 0 0;background:#d72e4d;border:0;color:white;border-radius:18px;padding:17px;font-size:15px;font-weight:750;box-shadow:0 10px 20px #d72e4d28}.nav{position:fixed;bottom:calc(13px + env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);width:min(calc(100% - 36px),650px);display:grid;grid-template-columns:repeat(3,1fr);padding:7px;border:1px solid #fff;background:#ffffffce;box-shadow:0 8px 35px #54728a25;backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-radius:25px}.nav button{border:0;background:transparent;border-radius:19px;padding:12px 3px;color:#6d8093;font-size:12px;font-weight:650}.nav button.active{background:#dcecff;color:#086bd7}.hidden{display:none!important}.note{font-size:12px;color:#70839a;line-height:1.6;margin-top:14px}.form{padding:20px;margin-top:15px}.field{display:block;font-size:12px;color:#5b7086;margin:15px 0 6px}.txt{width:100%;border:1px solid #d2deea;border-radius:12px;padding:13px;background:#fff;color:#14283e}.primary{background:#1478f0;color:white;border:0;border-radius:13px;padding:13px 18px;font-weight:700;margin-top:15px}.select{width:100%;border:1px solid #d2deea;background:#fff;border-radius:12px;padding:12px;color:#14283e}.toast{position:fixed;left:50%;bottom:calc(90px + env(safe-area-inset-bottom));transform:translateX(-50%);background:#213247;color:#fff;padding:10px 16px;border-radius:30px;font-size:12px;max-width:90%;text-align:center;pointer-events:none;opacity:0;transition:opacity .2s}.toast.show{opacity:1}@media(max-width:350px){.controls{grid-template-columns:repeat(2,1fr)}.title{font-size:30px}}
+</style></head><body><main>
+<div class="top"><div><div class="eyebrow">FRATESCHI · HO</div><h1 class="title">Rail Control</h1></div><span class="sim">● Simulação</span></div>
+<p class="intro">Sua ferrovia, em um só lugar. Controles minimalistas para uma frota que pode crescer.</p>
+<section id="garage"><div class="sectionhead"><h2>Garagem</h2><span class="muted" id="count"></span></div><div class="grid" id="garagegrid"></div><p class="note">Toque em uma locomotiva para colocá-la em um dos dois controles da operação.</p></section>
+<section id="operation" class="hidden"><div class="sectionhead"><h2>Operação</h2><span class="muted">2 controladores</span></div><div id="panels"></div><button class="emergency" id="stopall">■ Parar todas as locomotivas</button><p class="note">Modo de simulação: nenhum comando é transmitido aos trilhos. Para inverter a direção, reduza primeiro a potência a zero.</p></section>
+<section id="settings" class="hidden"><div class="sectionhead"><h2>Configurações</h2></div><div class="glass form"><strong>Adicionar locomotiva</strong><label class="field" for="locoid">Identificação</label><input class="txt" id="locoid" maxlength="16" placeholder="Ex.: 3050"><label class="field" for="loconame">Descrição (opcional)</label><input class="txt" id="loconame" maxlength="40" placeholder="Ex.: Diesel RFFSA"><button class="primary" id="addloco">Adicionar à garagem</button></div><div class="glass form"><strong>Central ferroviária</strong><p class="note">Conexão DCC-EX: ainda não implementada. Esta versão mantém os dados apenas neste navegador.</p><button class="control danger" id="reset">Restaurar dados da simulação</button></div></section>
+</main><nav class="nav" aria-label="Navegação"><button data-page="garage" class="active">▦ Garagem</button><button data-page="operation">◉ Operação</button><button data-page="settings">⚙ Ajustes</button></nav><div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script>
-const defaults=()=>({"3008":{speed:0,dir:"forward",light:false},"3042":{speed:0,dir:"forward",light:false}});
-let state=defaults(),active="3008";
-try{const saved=JSON.parse(localStorage.getItem("rail-sim"));if(saved&&saved["3008"]&&saved["3042"])state=saved;}catch{}
-const $=id=>document.getElementById(id);
-const persist=()=>{try{localStorage.setItem("rail-sim",JSON.stringify(state))}catch{}};
-function message(s){$("status").textContent=s}
-function render(){
-const s=state[active];$("name").textContent="Frateschi "+active;$("speed").textContent=s.speed;$("throttle").value=s.speed;
-$("forward").classList.toggle("selected",s.dir==="forward");$("reverse").classList.toggle("selected",s.dir==="reverse");
-$("light").classList.toggle("selected",s.light);$("light").textContent=s.light?"✦ Faróis ligados":"◌ Faróis desligados";
-document.querySelectorAll(".tab").forEach(b=>{b.classList.toggle("active",b.dataset.id===active);b.setAttribute("aria-pressed",b.dataset.id===active)});
-persist();
+const KEY='rail-control-v2';
+const initial=()=>({locos:[{id:'3008',name:'Frateschi 3008',speed:0,dir:'forward',light:false},{id:'3042',name:'Frateschi 3042',speed:0,dir:'forward',light:false}],slots:['3008','3042']});
+let data=initial(),page='garage';
+try{let old=JSON.parse(localStorage.getItem(KEY));if(old&&Array.isArray(old.locos)&&Array.isArray(old.slots))data=old;}catch(e){}
+const $=s=>document.querySelector(s),save=()=>{try{localStorage.setItem(KEY,JSON.stringify(data))}catch(e){}},get=id=>data.locos.find(l=>l.id===id);
+let timer;function notify(msg){const t=$('#toast');t.textContent=msg;t.classList.add('show');clearTimeout(timer);timer=setTimeout(()=>t.classList.remove('show'),2600)}
+function switchPage(p){page=p;document.querySelectorAll('main section[id]').forEach(s=>s.classList.toggle('hidden',s.id!==p));document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===p));render();}
+function render(){save();$('#count').textContent=data.locos.length+' cadastradas';$('#garagegrid').innerHTML=data.locos.map(l=>`<button class="glass loco" data-loco="${esc(l.id)}"><div class="num">${esc(l.id)}</div><div class="model">${esc(l.name)}</div><div class="bottom"><span><i class="indicator ${l.speed?'on':''}"></i>${l.speed?'Em movimento':'Parada'}</span><b>${l.speed}%</b></div></button>`).join('')+'<button class="glass loco add" id="addtile">＋ Adicionar</button>';
+$('#garagegrid').querySelectorAll('[data-loco]').forEach(b=>b.onclick=()=>{const id=b.dataset.loco;let index=data.slots.indexOf(id);if(index<0){index=0;data.slots[0]=id;}switchPage('operation');notify('Locomotiva '+id+' no controle '+(index+1))});
+$('#addtile').onclick=()=>switchPage('settings');
+$('#panels').innerHTML=data.slots.map((id,i)=>{const l=get(id);if(!l)return '';return `<div class="glass panel" data-slot="${i}"><div class="paneltop"><span class="panelname">Controle ${i+1}</span><span class="badge">SIMULADO</span></div><label class="field" for="sel${i}">Locomotiva</label><select class="select slotselect" id="sel${i}" data-slot="${i}">${data.locos.map(x=>`<option value="${esc(x.id)}" ${x.id===id?'selected':''}>${esc(x.name)}</option>`).join('')}</select><div class="speedrow"><span class="speed">${l.speed}</span><span class="unit">% POTÊNCIA</span></div><input aria-label="Velocidade da locomotiva ${esc(id)}" type="range" min="0" max="100" value="${l.speed}" class="throttle" data-slot="${i}"><div class="ends"><span>PARADO</span><span>MÁXIMO</span></div><div class="controls"><button class="control direction ${l.dir==='forward'?'active':''}" data-dir="forward" data-slot="${i}">↑ Frente</button><button class="control direction ${l.dir==='reverse'?'active':''}" data-dir="reverse" data-slot="${i}">↓ Ré</button><button class="control light ${l.light?'active':''}" data-slot="${i}">${l.light?'✦ Faróis ON':'◌ Faróis'}</button></div><div class="controls" style="grid-template-columns:1fr"><button class="control danger stopone" data-slot="${i}">■ Parar locomotiva</button></div></div>`}).join('');
+document.querySelectorAll('.slotselect').forEach(s=>s.onchange=()=>{let i=+s.dataset.slot,other=1-i;if(data.slots[other]===s.value){data.slots[other]=data.slots[i]}data.slots[i]=s.value;render()});
+document.querySelectorAll('.throttle').forEach(s=>s.oninput=()=>{get(data.slots[+s.dataset.slot]).speed=+s.value;render()});
+document.querySelectorAll('.direction').forEach(b=>b.onclick=()=>{let l=get(data.slots[+b.dataset.slot]);if(l.speed!==0){notify('Zere a potência antes de inverter a marcha.');return;}l.dir=b.dataset.dir;render()});
+document.querySelectorAll('.light').forEach(b=>b.onclick=()=>{let l=get(data.slots[+b.dataset.slot]);l.light=!l.light;render()});
+document.querySelectorAll('.stopone').forEach(b=>b.onclick=()=>{get(data.slots[+b.dataset.slot]).speed=0;render();notify('Locomotiva parada.')});
 }
-document.querySelectorAll(".tab").forEach(b=>b.addEventListener("click",()=>{active=b.dataset.id;render();message("Locomotiva "+active+" selecionada.")}));
-$("throttle").addEventListener("input",e=>{state[active].speed=Number(e.target.value);render();message("Potência da "+active+": "+state[active].speed+"%.")});
-function direction(dir){if(state[active].speed!==0){message("Reduza a potência a zero antes de inverter a marcha.");return}state[active].dir=dir;render();message("Sentido atualizado.")};
-$("forward").onclick=()=>direction("forward");$("reverse").onclick=()=>direction("reverse");
-$("light").onclick=()=>{state[active].light=!state[active].light;render();message("Iluminação atualizada.")};
-$("zero").onclick=()=>{state[active].speed=0;render();message("Potência zerada.")};
-$("stop").onclick=()=>{state[active].speed=0;render();message("Locomotiva "+active+" parada.")};
-$("allstop").onclick=()=>{Object.values(state).forEach(s=>s.speed=0);render();message("PARADA GERAL: duas locomotivas paradas.")};
-render();
-if("serviceWorker" in navigator && location.protocol.startsWith("http"))navigator.serviceWorker.register("./sw.js").catch(()=>{});
+function esc(v){return String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+document.querySelectorAll('.nav button').forEach(b=>b.onclick=()=>switchPage(b.dataset.page));
+$('#stopall').onclick=()=>{data.locos.forEach(l=>l.speed=0);render();notify('PARADA GERAL: todas as locomotivas paradas.')};
+$('#addloco').onclick=()=>{let id=$('#locoid').value.trim(),name=$('#loconame').value.trim();if(!id||!/^[\w-]{1,16}$/.test(id)){notify('Use até 16 letras, números, _ ou - na identificação.');return}if(get(id)){notify('Essa identificação já está cadastrada.');return}data.locos.push({id,name:name||'Frateschi '+id,speed:0,dir:'forward',light:false});$('#locoid').value='';$('#loconame').value='';switchPage('garage');notify('Locomotiva adicionada.')};
+$('#reset').onclick=()=>{if(confirm('Restaurar as duas locomotivas iniciais e apagar os cadastros extras?')){data=initial();switchPage('garage')}};
+switchPage('garage');
+if('serviceWorker'in navigator&&location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js').catch(()=>{});
 </script></body></html>

@@ -1,6 +1,3 @@
-RAIL CONTROL — PROTÓTIPO 01
+RAIL CONTROL V2 — SIMULAÇÃO
 
-Abra index.html no navegador de um computador para testar.
-Para usar no iPhone como app na tela inicial, publique os três arquivos em um servidor HTTPS estático e abra no Safari > Compartilhar > Adicionar à Tela de Início.
-O protótipo é somente simulação; não transmite comandos DCC nem controla trilhos.
-A interface mantém estados independentes das locomotivas 3008 e 3042, salvos no navegador.
+Substitua index.html, manifest.webmanifest e sw.js na raiz do repositório GitHub Pages. Confirme o commit e aguarde a publicação. Reabra o app no iPhone; se ainda mostrar a versão antiga, abra o endereço no Safari e atualize a página. O app NÃO controla locomotivas reais. Garagem expansível, dois controladores simultâneos, visual translúcido inspirado no iOS, dados salvos no navegador.
