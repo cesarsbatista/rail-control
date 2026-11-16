@@ -1,4 +1,25 @@
-RAIL CONTROL V3
-Atualize os arquivos na raiz do repositório GitHub Pages e aguarde a publicação.
-Novidades: tema escuro/claro/automático, indicação de movimento nos cartões, toque longo de mais de 1 segundo para renomear, velocidade em incrementos de 10% com botões +/- e slider.
-A V3 importa os cadastros locais da V2 quando possível. O app permanece em modo de simulação, sem controle real de trilhos.
+RAIL CONTROL V4 — BASEADA NA V3 ENVIADA
+
+ATUALIZAÇÃO NO GITHUB PAGES
+Substitua os arquivos index.html, manifest.webmanifest e sw.js na raiz do repositório pelos desta pasta. Os arquivos devem permanecer juntos.
+Se o aplicativo instalado continuar exibindo a versão antiga, atualize/reabra a página, aguarde o novo service worker e, se necessário, feche e reabra o aplicativo.
+
+NOVO NA V4
+- Navegação com cinco abas: Garagem, Operação, Desvios, Mapa e Configuração.
+- Cartões da Garagem com fotografia (opcional), fabricante, modelo, ID, endereço DCC, sentido, velocidade e situação.
+- Edição da locomotiva por botão Editar ou pressionamento de 1 segundo: nome, fabricante, modelo, endereço DCC, cor e foto.
+- Fotos são recortadas/compactadas automaticamente para armazenamento local.
+- Botão vermelho EMERGÊNCIA sempre visível no topo, com parada geral SIMULADA.
+- Importação de cadastros do localStorage da V3 (e da V2, quando disponível), sem remover as chaves antigas.
+
+PRESERVADO DA V3
+- Dois controladores independentes.
+- Slider de velocidade e botões + / - em incrementos de 10%; sem ajustes de 1% ou 5%.
+- Direção frente/ré apenas quando parado, faróis, parada individual.
+- Tema claro, escuro e automático.
+- Instalação como aplicativo web/PWA; modo simulação e dados salvos no navegador.
+
+IMPORTANTE
+As páginas Desvios e Mapa são áreas reservadas. Não há controle de motores, nem desenho real da maquete nesta versão. A V3 fornecida não continha um mapa a migrar.
+A V4 NÃO está conectada à central DCC-EX e o botão EMERGÊNCIA NÃO interrompe a alimentação elétrica dos trilhos. Todos os comandos são simulados.
+Fotos e cadastros são salvos no navegador usado. Limpar dados do site pode apagá-los. A migração é local: para reaproveitar os dados da V3, atualize o mesmo site e navegador.
