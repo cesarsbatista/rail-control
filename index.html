@@ -38,63 +38,13 @@
 .dialogmenu .confirm{background:#1478f0;color:#fff}
 
 :root{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif;color:#152339;background:#e9eef5}*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 5% 5%,#cbdcf9,transparent 55%),radial-gradient(ellipse at 95% 70%,#c8e8e8,transparent 55%),#e9eef5}button,input{font:inherit}button{cursor:pointer;touch-action:manipulation}main{max-width:720px;margin:auto;padding:env(safe-area-inset-top) 18px calc(110px + env(safe-area-inset-bottom))}.top{display:flex;justify-content:space-between;align-items:center;padding-top:27px}.eyebrow{font-size:11px;letter-spacing:.16em;color:#5d738e;font-weight:750}.title{font-size:35px;font-weight:750;letter-spacing:-.065em;margin:5px 0 0}.sim{font-size:11px;background:#ffffffa8;border:1px solid #ffffffc9;border-radius:99px;padding:9px 12px;color:#49617a;white-space:nowrap}.intro{color:#5f7289;font-size:14px;line-height:1.5;margin:12px 0 25px}.glass{background:#ffffffa8;border:1px solid #fff;box-shadow:0 12px 40px #54728a18,inset 0 1px #fff;border-radius:24px;backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px)}.sectionhead{display:flex;align-items:center;justify-content:space-between;margin:23px 2px 12px}.sectionhead h2{font-size:18px;margin:0;letter-spacing:-.035em}.muted{color:#708198;font-size:12px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.loco{padding:18px;text-align:left;color:inherit;min-height:140px}.loco .num{font-size:28px;font-weight:760;letter-spacing:-.05em}.loco .model{font-size:12px;color:#687d93;margin-top:5px}.loco .bottom{display:flex;justify-content:space-between;align-items:center;margin-top:23px;font-size:12px;color:#526b82}.indicator{width:8px;height:8px;border-radius:50%;display:inline-block;background:#9aa9b6;margin-right:5px}.indicator.on{background:#22a889}.add{border:1px dashed #9eafc2;background:#ffffff55;display:grid;place-items:center;color:#4d6680;font-size:15px}.panel{padding:19px;margin-top:12px}.paneltop{display:flex;justify-content:space-between;align-items:center;gap:8px}.panelname{font-size:18px;font-weight:730;letter-spacing:-.035em}.badge{font-size:11px;color:#60758a;background:#e8eff5;border-radius:30px;padding:7px 9px}.speedrow{display:flex;align-items:baseline;gap:8px;margin:15px 0 8px}.speed{font-size:50px;line-height:1;font-weight:750;letter-spacing:-.07em;font-variant-numeric:tabular-nums}.unit{font-size:12px;color:#6a7f93}input[type=range]{width:100%;accent-color:#1478f0;height:33px}.ends{display:flex;justify-content:space-between;color:#8392a5;font-size:11px}.controls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:13px}.control{background:#eef3f9;border:1px solid #e2eaf2;border-radius:13px;padding:12px 4px;color:#4c6178;font-weight:650;font-size:12px}.control.active{background:#d9eaff;color:#0867d0;border-color:#a9d0ff}.control.danger{background:#ffedf0;color:#b92e48;border-color:#ffd6df}.emergency{width:100%;margin:17px 0 0;background:#d72e4d;border:0;color:white;border-radius:18px;padding:17px;font-size:15px;font-weight:750;box-shadow:0 10px 20px #d72e4d28}.nav{position:fixed;bottom:calc(13px + env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);width:min(calc(100% - 36px),650px);display:grid;grid-template-columns:repeat(3,1fr);padding:7px;border:1px solid #fff;background:#ffffffce;box-shadow:0 8px 35px #54728a25;backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-radius:25px}.nav button{border:0;background:transparent;border-radius:19px;padding:12px 3px;color:#6d8093;font-size:12px;font-weight:650}.nav button.active{background:#dcecff;color:#086bd7}.hidden{display:none!important}.note{font-size:12px;color:#70839a;line-height:1.6;margin-top:14px}.form{padding:20px;margin-top:15px}.field{display:block;font-size:12px;color:#5b7086;margin:15px 0 6px}.txt{width:100%;border:1px solid #d2deea;border-radius:12px;padding:13px;background:#fff;color:#14283e}.primary{background:#1478f0;color:white;border:0;border-radius:13px;padding:13px 18px;font-weight:700;margin-top:15px}.select{width:100%;border:1px solid #d2deea;background:#fff;border-radius:12px;padding:12px;color:#14283e}.toast{position:fixed;left:50%;bottom:calc(90px + env(safe-area-inset-bottom));transform:translateX(-50%);background:#213247;color:#fff;padding:10px 16px;border-radius:30px;font-size:12px;max-width:90%;text-align:center;pointer-events:none;opacity:0;transition:opacity .2s}.toast.show{opacity:1}@media(max-width:350px){.controls{grid-template-columns:repeat(2,1fr)}.title{font-size:30px}}
-
-/* V3.1 — aba de energia, sem alterar a lógica da V3 */
-.nav{grid-template-columns:repeat(4,minmax(0,1fr))}
-.nav button{font-size:11px;white-space:nowrap;padding:13px 1px}
-.energycard{padding:22px;margin-top:12px}
-.energyidentity{display:flex;align-items:center;gap:15px}
-.plugmark{display:grid;place-items:center;flex-shrink:0;width:56px;height:56px;border-radius:19px;background:#e4effc;color:#1669bd;font-size:28px}
-.energytitle{font-size:19px;font-weight:760;letter-spacing:-.035em}
-.energysub{font-size:12px;color:#657b93;margin-top:5px;line-height:1.5}
-.energyunknown{padding:13px 15px;border:1px solid #bfcfe1;border-radius:14px;margin-top:20px;background:#eff5fc80;font-size:12px;color:#566f89;line-height:1.5}
-.energyactions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
-.energybtn{min-height:57px;border-radius:15px;border:1px solid transparent;color:white;font-size:14px;font-weight:750;padding:12px 5px}
-.energybtn.on{background:#136fbe;border-color:#136fbe}
-.energybtn.off{background:#a52d45;border-color:#a52d45}
-.energybtn:disabled{background:#95a4b3;color:#edf2f6;border-color:#95a4b3;cursor:not-allowed;opacity:.66}
-.energywarning{font-size:12px;line-height:1.6;color:#657b93;margin-top:15px}
-.energyhelp{font-size:12px;color:#607991;line-height:1.65;margin:14px 0 0;padding-left:19px}
-.energyhelp li{padding:2px 0}
-.smalllink{display:inline-block;margin-top:15px;color:#126ac0;font-size:13px;font-weight:700;text-decoration:none}
-.energyconf{font-size:12px;line-height:1.5;color:#5a728b;margin-top:12px}
-:root[data-theme="dark"] .plugmark{background:#1f4a68;color:#b8e0ff}
-:root[data-theme="dark"] .energysub,:root[data-theme="dark"] .energywarning,:root[data-theme="dark"] .energyhelp,:root[data-theme="dark"] .energyconf{color:#a8b9cc}
-:root[data-theme="dark"] .energyunknown{border-color:#435a70;background:#20364980;color:#c0cfe0}
-:root[data-theme="dark"] .smalllink{color:#a7d4ff}
-:root[data-theme="dark"] .energybtn:disabled{background:#425164;border-color:#425164;color:#a8b8ca}
-@media(max-width:370px){.nav button{font-size:10px}.energyactions{grid-template-columns:1fr}}
 </style></head><body><main>
 <div class="top"><div><div class="eyebrow">FRATESCHI · HO</div><h1 class="title">Rail Control</h1></div><span class="sim">● Simulação</span></div>
 <p class="intro">Sua ferrovia, em um só lugar. Controles minimalistas para uma frota que pode crescer.</p>
 <section id="garage"><div class="sectionhead"><h2>Garagem</h2><span class="muted" id="count"></span></div><div class="grid" id="garagegrid"></div><p class="note">Toque em uma locomotiva para colocá-la em um dos dois controles da operação.</p></section>
-<section id="operation" class="hidden"><div class="sectionhead"><h2>Operação</h2><span class="muted">2 controladores</span></div><div id="panels"></div><button class="emergency" id="stopall">■ Parar todas as locomotivas</button><p class="note">Modo de simulação: nenhum comando de velocidade ou parada desta tela é transmitido aos trilhos. Para a alimentação real, abra Energia. Para inverter a direção, reduza primeiro a potência a zero.</p></section>
-
-<section id="energy" class="hidden">
-  <div class="sectionhead"><h2>Energia</h2><span class="muted">Controle geral</span></div>
-  <div class="glass energycard">
-    <div class="energyidentity"><div class="plugmark" aria-hidden="true">⌁</div><div><div class="energytitle">Alimentação dos trilhos</div><div class="energysub">Positivo PPW1001 · Frateschi 5300</div></div></div>
-    <div class="energyunknown" role="status"><strong>Estado da tomada não verificado.</strong><div>O Rail Control abre Atalhos do iPhone; não recebe confirmação de que a tomada ligou ou desligou.</div></div>
-    <div class="energyactions"><button id="energyOn" class="energybtn on" type="button" disabled>⏻ Ligar</button><button id="energyOff" class="energybtn off" type="button" disabled>■ Desligar</button></div>
-    <p class="energywarning"><strong>Atenção:</strong> antes de ligar, deixe o botão de velocidade do Frateschi em zero. Ligar a tomada com potência selecionada pode causar partida brusca. Não use estes botões como parada de emergência garantida.</p>
-  </div>
-  <div class="glass form">
-    <strong>Vincular Atalhos do iPhone</strong>
-    <p class="note">Insira os nomes <strong>exatos</strong> de dois atalhos já criados no app Atalhos. Cada atalho precisa executar a ação correspondente na tomada. Somente dar um nome não cria a conexão com a Positivo.</p>
-    <label class="field" for="shortcutOn">Atalho para ligar</label><input class="txt" id="shortcutOn" maxlength="80" placeholder="Ex.: Rail Ligar" autocomplete="off" spellcheck="false">
-    <label class="field" for="shortcutOff">Atalho para desligar</label><input class="txt" id="shortcutOff" maxlength="80" placeholder="Ex.: Rail Desligar" autocomplete="off" spellcheck="false">
-    <button class="primary" id="saveEnergy" type="button">Salvar nomes dos atalhos</button>
-    <div class="energyconf" id="energyConfigStatus" aria-live="polite">Configure os dois atalhos para habilitar os comandos.</div>
-    <a class="smalllink" href="shortcuts://" id="openShortcuts">Abrir Atalhos no iPhone</a>
-  </div>
-  <div class="glass form">
-    <strong>Preparação</strong>
-    <ol class="energyhelp"><li>No app <em>Positivo Casa Inteligente</em>, crie e teste separadamente as cenas de ligar e desligar a tomada.</li><li>Verifique se o app Positivo disponibiliza essas cenas como ações executáveis pelo app <em>Atalhos</em> do iPhone. Essa compatibilidade ainda não está confirmada para seu modelo.</li><li>Se houver integração, crie dois atalhos, teste-os diretamente em Atalhos e cadastre seus nomes acima.</li><li>Use os botões Ligar e Desligar nesta aba. Confira o resultado na tomada ou no app Positivo.</li></ol>
-    <p class="note">Sem integração da Positivo com Atalhos, esta aba funciona como interface preparada, mas não consegue acionar a tomada sozinha. A garagem e a operação continuam em modo de simulação.</p>
-  </div>
-</section>
+<section id="operation" class="hidden"><div class="sectionhead"><h2>Operação</h2><span class="muted">2 controladores</span></div><div id="panels"></div><button class="emergency" id="stopall">■ Parar todas as locomotivas</button><p class="note">Modo de simulação: nenhum comando é transmitido aos trilhos. Para inverter a direção, reduza primeiro a potência a zero.</p></section>
 <section id="settings" class="hidden"><div class="sectionhead"><h2>Configurações</h2></div><div class="glass form"><strong>Adicionar locomotiva</strong><label class="field" for="locoid">Identificação</label><input class="txt" id="locoid" maxlength="16" placeholder="Ex.: 3050"><label class="field" for="loconame">Descrição (opcional)</label><input class="txt" id="loconame" maxlength="40" placeholder="Ex.: Diesel RFFSA"><button class="primary" id="addloco">Adicionar à garagem</button></div><div class="glass form"><strong>Aparência</strong><p class="note">Escolha o modo escuro, claro ou automático conforme o iPhone.</p><div class="themechoices" id="themechoices"><button data-themechoice="auto">Automático</button><button data-themechoice="light">Claro</button><button data-themechoice="dark">Escuro</button></div></div><div class="glass form"><strong>Central ferroviária</strong><p class="note">Conexão DCC-EX: ainda não implementada. Esta versão mantém os dados apenas neste navegador.</p><button class="control danger" id="reset">Restaurar dados da simulação</button></div></section>
-</main><dialog class="dialog" id="renameDialog"><form method="dialog" id="renameForm"><h2>Renomear locomotiva</h2><p class="note" id="renameId"></p><label class="field" for="renameInput">Nome da locomotiva</label><input class="txt" id="renameInput" maxlength="40" required><div class="dialogmenu"><button class="cancel" value="cancel">Cancelar</button><button class="confirm" id="renameSave" value="save">Salvar</button></div></form></dialog><nav class="nav" aria-label="Navegação"><button data-page="garage" class="active">▦ Garagem</button><button data-page="operation">◉ Operação</button><button data-page="energy">⏻ Energia</button><button data-page="settings">⚙ Ajustes</button></nav><div class="toast" id="toast" role="status" aria-live="polite"></div>
+</main><dialog class="dialog" id="renameDialog"><form method="dialog" id="renameForm"><h2>Renomear locomotiva</h2><p class="note" id="renameId"></p><label class="field" for="renameInput">Nome da locomotiva</label><input class="txt" id="renameInput" maxlength="40" required><div class="dialogmenu"><button class="cancel" value="cancel">Cancelar</button><button class="confirm" id="renameSave" value="save">Salvar</button></div></form></dialog><nav class="nav" aria-label="Navegação"><button data-page="garage" class="active">▦ Garagem</button><button data-page="operation">◉ Operação</button><button data-page="settings">⚙ Ajustes</button></nav><div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script>
 const KEY='rail-control-v3';const OLD_KEY='rail-control-v2';
 const initial=()=>({locos:[{id:'3008',name:'Frateschi 3008',speed:0,dir:'forward',light:false},{id:'3042',name:'Frateschi 3042',speed:0,dir:'forward',light:false}],slots:['3008','3042']});
@@ -134,39 +84,6 @@ $('#stopall').onclick=()=>{data.locos.forEach(l=>l.speed=0);render();notify('PAR
 $('#addloco').onclick=()=>{let id=$('#locoid').value.trim(),name=$('#loconame').value.trim();if(!id||!/^[\w-]{1,16}$/.test(id)){notify('Use até 16 letras, números, _ ou - na identificação.');return}if(get(id)){notify('Essa identificação já está cadastrada.');return}data.locos.push({id,name:name||'Frateschi '+id,speed:0,dir:'forward',light:false});$('#locoid').value='';$('#loconame').value='';switchPage('garage');notify('Locomotiva adicionada.')};
 $('#reset').onclick=()=>{if(confirm('Restaurar as duas locomotivas iniciais e apagar os cadastros extras?')){data=initial();switchPage('garage')}};
 document.querySelectorAll('[data-themechoice]').forEach(b=>b.onclick=()=>{themeChoice=b.dataset.themechoice;localStorage.setItem('rail-theme',themeChoice);applyTheme()});
-
-// V3.1: comandos de energia utilizam somente o URL scheme oficial do app Atalhos.
-// O app não transmite comandos diretamente à Positivo e não lê o estado da tomada.
-const ENERGY_KEY='rail-control-energy-v3-1';
-let energyNames={on:'',off:''};
-try { const prior=JSON.parse(localStorage.getItem(ENERGY_KEY)||'null');
-  if(prior && typeof prior.on==='string' && typeof prior.off==='string') energyNames={on:prior.on,off:prior.off};
-} catch(e){}
-function renderEnergy(){
-  $('#shortcutOn').value=energyNames.on;
-  $('#shortcutOff').value=energyNames.off;
-  $('#energyOn').disabled=!energyNames.on.trim();
-  $('#energyOff').disabled=!energyNames.off.trim();
-  const count=Number(!!energyNames.on.trim())+Number(!!energyNames.off.trim());
-  $('#energyConfigStatus').textContent=count===2?'Atalhos nomeados. Confirme que ambos executam a ação real na Positivo antes de usar.':count===1?'Um dos atalhos está configurado. Cadastre o outro para habilitar os dois comandos.':'Configure os nomes dos atalhos para habilitar os comandos.';
-}
-$('#saveEnergy').addEventListener('click',()=>{
-  energyNames={on:$('#shortcutOn').value.trim(),off:$('#shortcutOff').value.trim()};
-  try{localStorage.setItem(ENERGY_KEY,JSON.stringify(energyNames));}catch(e){}
-  renderEnergy(); notify('Nomes salvos. Integração com a tomada ainda depende dos Atalhos.');
-});
-function runEnergyShortcut(kind){
-  const name=energyNames[kind].trim();
-  if(!name){notify('Cadastre primeiro o nome do atalho.');return;}
-  if(kind==='on'&&!confirm('Antes de ligar, confirme que a velocidade do Frateschi 5300 está em ZERO e os trilhos estão livres. Abrir o atalho para ligar a alimentação?'))return;
-  notify('Abrindo Atalhos. Verifique a execução no app Positivo.');
-  // Apenas aciona o aplicativo Atalhos; não afirma que a tomada mudou de estado.
-  window.location.href='shortcuts://run-shortcut?name='+encodeURIComponent(name);
-}
-$('#energyOn').addEventListener('click',()=>runEnergyShortcut('on'));
-$('#energyOff').addEventListener('click',()=>runEnergyShortcut('off'));
-renderEnergy();
-
 applyTheme();switchPage('garage');
 if('serviceWorker'in navigator&&location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js').catch(()=>{});
 </script></body></html>
