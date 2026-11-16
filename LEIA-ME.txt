@@ -23,3 +23,7 @@ IMPORTANTE
 As páginas Desvios e Mapa são áreas reservadas. Não há controle de motores, nem desenho real da maquete nesta versão. A V3 fornecida não continha um mapa a migrar.
 A V4 NÃO está conectada à central DCC-EX e o botão EMERGÊNCIA NÃO interrompe a alimentação elétrica dos trilhos. Todos os comandos são simulados.
 Fotos e cadastros são salvos no navegador usado. Limpar dados do site pode apagá-los. A migração é local: para reaproveitar os dados da V3, atualize o mesmo site e navegador.
+
+
+ÍCONE OFICIAL GLASS
+Incluído o ícone vermelho/amarelo com efeito glass, nas dimensões 16, 32, 180 (Apple Touch), 192 e 512 pixels. O HTML contém apple-touch-icon e favicon e o manifesto PWA aponta para 192/512. O cache do Service Worker foi atualizado. Envie TODOS os arquivos da pasta para a raiz do GitHub Pages. Para trocar o ícone de um atalho já instalado no iPhone, talvez seja necessário remover o atalho da tela de início e adicionar novamente a partir do Safari.
